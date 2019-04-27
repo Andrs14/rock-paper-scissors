@@ -1,0 +1,12 @@
+#header {
+    width: 100%;
+    height: 30px;
+    background-color: #d5573b;
+}
+
+.logo {
+    font-family: 'Permanent Marker', cursive;
+    color: #f7f9f9;
+    font-size: 25px;
+    max-width: 10px;
+}
