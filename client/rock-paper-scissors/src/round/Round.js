@@ -1,6 +1,6 @@
-import React from 'react';
+import React from "react";
 
-class Game extends React.Component {
+class Round extends React.Component {
     render() {
         return (
             <div>
@@ -18,10 +18,12 @@ class Game extends React.Component {
                 <div>
                     <h1>Score</h1>
                     <div>
-                        <div>Round</div><div>Winner</div>
+                        <div>Round</div>
+                        <div>Winner</div>
                     </div>
                     <div>
-                        <div>#1</div><div>[Player 1 name]</div>
+                        <div>#1</div>
+                        <div>[Player 1 name]</div>
                     </div>
                 </div>
             </div>
@@ -30,4 +32,4 @@ class Game extends React.Component {
     }
 }
 
-export default Game;
+export default Round;
