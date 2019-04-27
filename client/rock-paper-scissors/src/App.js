@@ -4,6 +4,7 @@ import PlayerForm from './player/PlayerForm';
 import Ranking from './ranking/Ranking';
 import Header from './header/Header';
 import Game from './game/Game';
+import Winner from './winner/Winner';
 import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact component={PlayerForm}/>
           <Route path="/game" component={Game}/>
           <Route path="/ranking" component={Ranking}/>
+          <Route path="/winner" component={Winner}/>
       </Router>
     </div>
   );
