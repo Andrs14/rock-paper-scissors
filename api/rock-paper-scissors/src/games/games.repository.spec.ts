@@ -1,8 +1,9 @@
-import { GamesRepository, GamesRepositoryProvider } from './games.repository';
+import { GamesRepository } from './games.repository';
 import { Game } from './game.entity';
 import { Test, TestingModule } from '@nestjs/testing';
 import { GamesModule } from './games.module';
 import { getRepositoryToken, TypeOrmModule } from '@nestjs/typeorm';
+import databaseConfig from '../../test/functional/database.config';
 
 describe('GamesRepository', () => {
   let repository: GamesRepository;
@@ -12,12 +13,7 @@ describe('GamesRepository', () => {
       imports: [
         GamesModule,
         TypeOrmModule.forRoot({
-          type: 'postgres',
-          host: 'localhost',
-          port: 5432,
-          username: 'postgres',
-          password: 'postgres',
-          database: 'rpstest',
+          ...databaseConfig,
           entities: [Game],
         }),
       ],
