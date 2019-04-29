@@ -1,12 +1,5 @@
 import { ConnectionOptions } from 'typeorm';
-
-const databaseConfig: Partial<ConnectionOptions> = {
-  type: 'postgres',
-  host: 'localhost',
-  port: 5432,
-  username: 'postgres',
-  password: 'postgres',
-  database: 'rpstest',
-};
+import configJson from '../../ormconfigtest.json';
+const databaseConfig: Partial<ConnectionOptions> = configJson as Partial<ConnectionOptions>;
 
 export default databaseConfig;
