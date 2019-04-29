@@ -3,8 +3,6 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { GamesController } from './games/games.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import {config} from 'dotenv';
-config();
 
 @Module({
   imports: [
@@ -16,7 +14,11 @@ config();
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
-      synchronize: true,
+      migrationsTableName: 'migrations',
+      migrations: ['migration/*.ts'],
+      cli: {
+        migrationsDir: 'migrations',
+      },
     }),
   ],
   controllers: [AppController, GamesController],
