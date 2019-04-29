@@ -68,6 +68,10 @@ export class AddGames1556496714636 implements MigrationInterface {
         idColumn,
         gameIdColumn,
         {
+          name: 'order',
+          type: 'integer',
+        },
+        {
           name: 'player1Move',
           type: 'varchar',
         },
@@ -96,7 +100,6 @@ export class AddGames1556496714636 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<any> {
-    await queryRunner.dropTable('result');
     await queryRunner.dropTable('round');
     await queryRunner.dropTable('game');
     await queryRunner.dropTable('player');
