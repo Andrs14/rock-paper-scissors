@@ -14,8 +14,8 @@ class PlayerForm extends React.Component {
     }
 
     handleSubmit(event) {
-        this.props.onSubmit(this.state);
         event.preventDefault();
+        return this.props.onSubmit(this.state);
     }
 
     changePlayer1(event) {

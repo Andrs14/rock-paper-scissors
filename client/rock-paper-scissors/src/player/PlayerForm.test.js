@@ -37,7 +37,7 @@ describe('PlayerForm', () => {
         );
 
         fireEvent.submit(getByTestId('form'));
-        
+
         expect(onSubmit).toBeCalledWith(
             expect.objectContaining({
                 player1: expectedPlayer1.value,

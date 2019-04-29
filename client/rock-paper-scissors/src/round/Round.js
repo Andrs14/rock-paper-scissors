@@ -1,11 +1,32 @@
 import React from "react";
+import Games from '../services/Games';
 
 class Round extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            game: {
+                rounds: [],
+            }
+        };
+    }
+
+    componentDidMount() {
+        Games.show(this.props.createdGame.id).then(
+            game => this.setState(game)
+        );
+    }
+
+    roundNumber() {
+        return this.state.alert.rounds.length + 1;
+    }
+
     render() {
         return (
             <div>
                 <div>
-                    <h1>Round [number]</h1>
+                    <h1>Round {this.roundNumber()}</h1>
                     <h2>[Player name]</h2>
                     <p>Choose your weapon!</p>
                     <div>
