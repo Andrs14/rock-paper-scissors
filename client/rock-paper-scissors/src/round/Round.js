@@ -19,7 +19,7 @@ class Round extends React.Component {
     }
 
     roundNumber() {
-        return this.state.alert.rounds.length + 1;
+        return this.state.game.rounds.length + 1;
     }
 
     render() {
