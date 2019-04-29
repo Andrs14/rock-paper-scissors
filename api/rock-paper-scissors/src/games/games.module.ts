@@ -1,9 +1,9 @@
 import { Module } from '@nestjs/common';
-import { Game } from './Game';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { GamesRepository } from './games.repository';
 
 @Module({
-  imports: [TypeOrmModule.forFeature(Game)],
-  providers: [],
+  imports: [TypeOrmModule.forFeature([GamesRepository])],
+  providers: [GamesRepository],
 })
 export class GamesModule {}
